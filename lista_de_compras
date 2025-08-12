@@ -1,0 +1,30 @@
+import os
+
+lista = []
+
+while True:
+
+    comando = input('Selecione uma opção \n[i]nserir [a]pagar [l]istar:')
+
+    if comando == 'i':
+        os.system('clr')
+        valor = input('Valor: ')
+        lista.append(valor)
+
+    elif comando == 'a':
+        indice_str = input('Escolha o indice para apagar: ')
+
+        try:
+            indice = int(indice_str)
+            del lista[indice]
+        except:
+            print('Não foi possível apagar este índice')
+
+    elif comando == 'l':
+        os.system('clr')
+
+        if len(lista) == 0:
+            print('Nada para listar')
+
+        for i, valor in enumerate(lista):
+            print(i, valor)
